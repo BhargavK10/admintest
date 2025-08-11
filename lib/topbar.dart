@@ -1,0 +1,22 @@
+import 'package:admintest/notifications.dart';
+import 'package:flutter/material.dart';
+
+PreferredSizeWidget topBar(BuildContext context, String text){
+  return AppBar(
+    backgroundColor: Colors.black,
+    foregroundColor: Colors.white,
+    centerTitle: true,
+    title: Text(text),
+    actions: [
+      IconButton(
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_)=> Notifications())
+          );
+        },
+        icon: Icon(Icons.notifications_outlined)
+      )
+    ],
+  );
+}
