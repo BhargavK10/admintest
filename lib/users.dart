@@ -1,13 +1,13 @@
 import 'package:admintest/topbar.dart';
 import 'package:flutter/material.dart';
 
-class ManageCategories extends StatelessWidget {
-  const ManageCategories({super.key});
+class Users extends StatelessWidget {
+  const Users ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: topBar(context, 'Categories'),
+      appBar: topBar(context, 'users'),
       body: Text('data'),
     );
   }

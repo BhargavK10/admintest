@@ -1,6 +1,6 @@
 // import 'package:admintest/topbar.dart';
-import 'package:admintest/managecategories.dart';
-import 'package:admintest/manageproducts.dart';
+import 'package:admintest/screens/product_page.dart';
+import 'package:admintest/users.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -79,33 +79,7 @@ class _HomePageState extends State<HomePage> {
                   GestureDetector(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(
-                        builder: (_)=>ManageCategories())
-                      );
-                    },
-                    child: Container(
-                      width: MediaQuery.of(context).size.width*0.4,
-                      height: MediaQuery.of(context).size.width*0.4,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Colors.grey
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Icon(
-                            Icons.build,
-                            size: 75,
-                            color: Colors.white,
-                          ),
-                          Text('Categories')
-                        ],
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (_)=>ManageProducts())
+                        builder: (_)=>ProductPage())
                       );
                     },
                     child: Container(
@@ -127,8 +101,59 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (_)=>Users())
+                      );
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width*0.4,
+                      height: MediaQuery.of(context).size.width*0.4,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.grey
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(
+                            Icons.person,
+                            size: 75,
+                            color: Colors.white,
+                          ),
+                          Text('Users')
+                        ],
+                      ),
+                    ),
                   )
                 ],
+              ),
+              SizedBox(height: 20,),
+              Container(
+                width: MediaQuery.of(context).size.width * 0.95,
+                height: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(255, 102, 102, 102)
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.bar_chart,
+                      size: 100,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Statistics coming soon!",
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                    )
+                  ],
+                ),
               )
             ],
           ),
